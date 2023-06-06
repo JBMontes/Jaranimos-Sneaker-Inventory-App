@@ -1,5 +1,5 @@
 [
-    {"name": "sacai" , "priceInCents": 250 , "inStock": true, "type": "lows"},
-    {"name": "blazers", "priceInCents": 90, "inStock": false , "type": "highs"},
-    {"name": "dunks", "priceInCents":110 , "inStock": true, "type":"lows"}
+    {"id": "nv03", "name": "sacai" , "priceInCents": 250 , "inStock": true, "type": "lows"},
+    {"id": "0dj3","name": "blazers", "priceInCents": 90, "inStock": false , "type": "highs"},
+    {"id": "do3j","name": "dunks", "priceInCents":110 , "inStock": true, "type":"lows"}
 ]

@@ -5,9 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    
+    "start": "node index.js",
+    "create": "node index.js create",
+    "index": "node index.js index",
+    "view": "node index.js view",
+    "update": "node index.js update",
+    "remove": "node index.js remove",
+    "total": "node index.js total",
+    "emptyCart": "node index.js emptyCart",
+    "filter": "node index.js filter"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "nanoid": "^3.3.6"
+  }
 }
