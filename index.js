@@ -7,7 +7,7 @@ const data = require("./data/sampleData.json");
 
 function run(){
 
-    inform("Welcome to Jaranimo's Sneaker App");
+    inform("Welcome to Jaranimo's Online Sneaker App");
     let purchases = readJSONFile("data", "customerCart.json");
 
     let writeToFile = false;
@@ -53,16 +53,17 @@ function run(){
             break;
 
         case "inStock":
-            let availability = inStock(purchases)
+            let availability = inStock(data)
             inform(availability)
         break;
-        
+
         default:
           inform("Error with Information Provided!");
       }
       if (writeToFile) {
         writeJSONFile("./data", "customerCart.json", updatedPurchase);
       }
+      inform("Thank You for shopping with us!")
     }
     run();
     

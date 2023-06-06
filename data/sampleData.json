@@ -3,8 +3,8 @@
     {"name": "blazers", "priceInCents": 90, "inStock": false , "type": "HighTop"},
     {"name": "dunks", "priceInCents":110 , "inStock": true, "type": "LowTop"},
     {"name": "waffleRunner", "priceInCents":70 , "inStock": false, "type":"LowTop"},
-    {"name": "airMax97", "priceInCents":180 , "inStock": true, "type":"LowTop"},
-    {"name": "spaceJunkies", "priceInCents":140 , "inStock": true, "type":"LowTop"},
+    {"name": "airMax97", "priceInCents":180 , "inStock": false, "type":"LowTop"},
+    {"name": "spaceJunkies", "priceInCents":140 , "inStock": false, "type":"LowTop"},
     {"name": "jordanOne", "priceInCents":110 , "inStock": true, "type":"HighTop"}
 
 ]
