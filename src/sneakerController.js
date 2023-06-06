@@ -24,7 +24,7 @@ function create(customerCart, item) {
 
   function index(customerCart) {
     return customerCart.map(
-      (eachPurchase) => eachPurchase.id + " " + eachPurchase.name + " " + eachPurchase.priceInCents + " " + eachPurchase.inStock + " " + eachPurchase.type);
+      (eachPurchase) => `id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type}`);
     }
 
     function view(customerCart, item) {
@@ -32,25 +32,29 @@ function create(customerCart, item) {
           (product) => product.name === item
         );
         for (let info of singlePurchaseInfo) {
-          return chalk.bgMagenta(`${chalk.green("id")} ${chalk.black(info.id)} ${chalk.green("name")} ${
+          return chalk.bgWhiteBright(`${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green("name")}: ${
               chalk.black(info.name)
-          } ${chalk.blue("priceInCents")} ${chalk.black(info.priceInCents)} ${chalk.yellow(
+          } | ${chalk.blue("priceInCents")}: ${chalk.black(info.priceInCents)} | ${chalk.red(
             "inStock"
-          )} ${chalk.yellow(info.inStock)} ${chalk.blue("type")} ${chalk.cyan(info.type)}`);
+          )}: ${chalk.yellow(info.inStock)} | ${chalk.blue("type")}: ${chalk.cyan(info.type)}`);
         }
       }
       
     
 function update(customerCart, purchaseId, updatedPurchase) {
     const index = customerCart.findIndex(
-      (purchase) => purchase.id === purchaseId
-    );
+      (purchase) => purchase.id === purchaseId);
+
+    const updatedItem = data.find(
+        (purchase) => purchase.name === updatedPurchase
+      );
+    
     if (index > -1) {
       customerCart[index].id = purchaseId;
       customerCart[index].name = updatedPurchase;
-      customerCart[index].priceInCents = data[updatedPurchase];
-      customerCart[index].inStock = data[updatedPurchase]
-      customerCart[index].type = data[updatedPurchase];
+      customerCart[index].priceInCents = updatedItem.priceInCents;
+      customerCart[index].inStock = updatedItem.inStock;
+      customerCart[index].type = updatedItem.type;
 
       inform("Purchase successfully updated");
       return customerCart;
@@ -81,13 +85,17 @@ function remove(customerCart, purchaseId) {
   }
 
   function emptyCart(customerCart){
-    if(customerCart){
-        customerCart.splice(0,customerCart.length)
+    if(customerCart.length > 0){
+       customerCart.splice(0,customerCart.length)
     }
+    return customerCart
   }
 
+function inStock(data){
+   return data.filter((sneakers) => sneakers.inStock === true)
+
+}
 
 
 
-
-  module.exports = {create, index, view, update, remove, total, emptyCart }
+  module.exports = {create, index, view, update, remove, total, emptyCart, inStock  }

@@ -1,6 +1,6 @@
 const { readJSONFile, writeJSONFile } = require("./src/helper");
 
-const {create, index, view, update, remove, total, emptyCart } = require("./src/sneakerController")
+const {create, index, view, update, remove, total, emptyCart, inStock } = require("./src/sneakerController")
 
 const inform = console.log;
 const data = require("./data/sampleData.json");
@@ -51,7 +51,12 @@ function run(){
            updatedPurchase = emptyCart(purchases)
             writeToFile = true;
             break;
-    
+
+        case "inStock":
+            let availability = inStock(purchases)
+            inform(availability)
+        break;
+        
         default:
           inform("Error with Information Provided!");
       }

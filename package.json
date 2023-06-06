@@ -13,7 +13,7 @@
     "remove": "node index.js remove",
     "total": "node index.js total",
     "emptyCart": "node index.js emptyCart",
-    "filter": "node index.js filter"
+    "inStock": "node index.js inStock"
   },
   "keywords": [],
   "author": "",
