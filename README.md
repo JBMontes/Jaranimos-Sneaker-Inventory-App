@@ -1,2 +1,2 @@
-# Jaranimos-Sneaker-Inventory-App
+# Jaranimos-Vintage-Inventory-App
 Command Line Inventory App
