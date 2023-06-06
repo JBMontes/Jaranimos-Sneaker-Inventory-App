@@ -34,9 +34,9 @@ function view(customerCart, item) {
         "name"
       )}: ${chalk.black(info.name)} | ${chalk.blue(
         "priceInCents"
-      )}: ${chalk.green(`$`)}${chalk.black(info.priceInCents)}${chalk.black(
+      )}: ${chalk.green(`$`)}${chalk.green(info.priceInCents)}${chalk.green(
         `.00`
-      )} | ${chalk.red("inStock")}: ${chalk.green(
+      )} | ${chalk.red("inStock")}: ${chalk.black(
         info.inStock
       )} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)}`
     );
@@ -99,7 +99,11 @@ function emptyCart(customerCart) {
 }
 
 function inStock(data) {
-  return data.filter((sneakers) => sneakers.inStock === true);
+  let filtered = data.filter((sneakers) => sneakers.inStock === true);
+  return filtered.map(
+    (item) =>
+      `name: ${item.name} | type: ${item.type} | price: ${item.priceInCents}`
+  );
 }
 
 module.exports = {

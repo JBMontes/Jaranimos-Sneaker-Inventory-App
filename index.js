@@ -1,70 +1,76 @@
 const { readJSONFile, writeJSONFile } = require("./src/helper");
 
-const {create, index, view, update, remove, total, emptyCart, inStock } = require("./src/vintageController")
+const {
+  create,
+  index,
+  view,
+  update,
+  remove,
+  total,
+  emptyCart,
+  inStock,
+} = require("./src/vintageController");
 
 const inform = console.log;
 const data = require("./data/sampleData.json");
 
-function run(){
+function run() {
+  inform("Welcome to Jaranimo's Online Vintage App");
+  let purchases = readJSONFile("data", "customerCart.json");
 
-    inform("Welcome to Jaranimo's Online Sneaker App");
-    let purchases = readJSONFile("data", "customerCart.json");
+  let writeToFile = false;
+  let updatedPurchase = [];
 
-    let writeToFile = false;
-    let updatedPurchase = [];
+  const action = process.argv[2];
+  const purchase = process.argv[3];
 
-    const action = process.argv[2];
-    const purchase = process.argv[3];
+  switch (action) {
+    case "index":
+      const purchaseView = index(purchases);
+      inform(purchaseView);
+      break;
 
-    switch (action) {
-        case "index":
-          const purchaseView = index(purchases);
-          inform(purchaseView);
-          break;
-    
-        case "view":
-          const detailedView = view(purchases, purchase);
-          inform(detailedView);
-          break;
-    
-        case "create":
-          updatedPurchase = create(purchases, purchase);
-          writeToFile = true;
-          break;
-    
-        case "update":
-          updatedPurchase = update(purchases, purchase, process.argv[4]);
-          writeToFile = true;
-          break;
-    
-        case "remove":
-          updatedPurchase = remove(purchases, purchase);
-          writeToFile = true;
-          break;
-    
-        case "total":
-          let totalDonation = total(purchases);
-          inform(totalDonation);
-          break;
+    case "view":
+      const detailedView = view(purchases, purchase);
+      inform(detailedView);
+      break;
 
-        case "emptyCart":
-           updatedPurchase = emptyCart(purchases)
-            writeToFile = true;
-            break;
+    case "create":
+      updatedPurchase = create(purchases, purchase);
+      writeToFile = true;
+      break;
 
-        case "inStock":
-            let availability = inStock(data)
-            inform(availability)
-        break;
+    case "update":
+      updatedPurchase = update(purchases, purchase, process.argv[4]);
+      writeToFile = true;
+      break;
 
-        default:
-          inform("Error with Information Provided!");
-      }
-      if (writeToFile) {
-        writeJSONFile("./data", "customerCart.json", updatedPurchase);
-      }
-      inform("Thank You for shopping with us!")
-    }
-    run();
-    
+    case "remove":
+      updatedPurchase = remove(purchases, purchase);
+      writeToFile = true;
+      break;
 
+    case "total":
+      let totalDonation = total(purchases);
+      inform(totalDonation);
+      break;
+
+    case "emptyCart":
+      updatedPurchase = emptyCart(purchases);
+      writeToFile = true;
+      break;
+
+    case "inStock":
+      let availability = inStock(data);
+      inform(availability);
+      break;
+
+    default:
+      inform("Error with Information Provided!");
+  }
+  if (writeToFile) {
+    writeJSONFile("./data", "customerCart.json", updatedPurchase);
+  }
+  inform("Thank You for shopping with us!");
+}
+run();
