@@ -1,0 +1,13 @@
+{
+  "name": "jaranimos-sneaker-inventory-app",
+  "version": "1.0.0",
+  "description": "Sneaker Command Line Inventory App used to manipulate orders online.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

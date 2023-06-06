@@ -1,0 +1,5 @@
+[
+    {"name": "sacai" , "priceInCents": 250 , "inStock": true, "type": "lows"},
+    {"name": "blazers", "priceInCents": 90, "inStock": false , "type": "highs"},
+    {"name": "dunks", "priceInCents":110 , "inStock": true, "type":"lows"}
+]
