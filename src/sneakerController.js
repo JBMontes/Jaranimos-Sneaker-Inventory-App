@@ -34,9 +34,9 @@ function create(customerCart, item) {
         for (let info of singlePurchaseInfo) {
           return chalk.bgWhiteBright(`${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green("name")}: ${
               chalk.black(info.name)
-          } | ${chalk.blue("priceInCents")}: ${chalk.black(info.priceInCents)} | ${chalk.red(
+          } | ${chalk.blue("priceInCents")}: ${chalk.green(`$`)}${chalk.black(info.priceInCents)}${chalk.black(`.00`)} | ${chalk.red(
             "inStock"
-          )}: ${chalk.yellow(info.inStock)} | ${chalk.blue("type")}: ${chalk.cyan(info.type)}`);
+          )}: ${chalk.green(info.inStock)} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)}`);
         }
       }
       
@@ -81,7 +81,7 @@ function remove(customerCart, purchaseId) {
   function total(customerCart) {
     let filteredPriceInCents = customerCart.map((amounts) => amounts.priceInCents);
     let totalAmount = filteredPriceInCents.reduce((prev, curr) => prev + curr);
-    return `Number of items: # ${filteredPriceInCents.length} Amount total: $${totalAmount}`;
+    return `Number of items: ${chalk.cyan(filteredPriceInCents.length)} | Amount total: ${chalk.green(`$`)}${chalk.green(totalAmount)}`;
   }
 
   function emptyCart(customerCart){
