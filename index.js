@@ -1,6 +1,6 @@
 const { readJSONFile, writeJSONFile } = require("./src/helper");
 
-const {create, index, view, update, remove, total, emptyCart, inStock } = require("./src/sneakerController")
+const {create, index, view, update, remove, total, emptyCart, inStock } = require("./src/vintageController")
 
 const inform = console.log;
 const data = require("./data/sampleData.json");

@@ -1,7 +1,7 @@
 const {
     index,
     inStock
-  } = require("../src/sneakerController");
+  } = require("../src/vintageController");
   
   const data = require("../data/sampleData.json")
 
