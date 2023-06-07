@@ -77,6 +77,7 @@ function run() {
       let filter = filterCondition(data, process.argv[3]);
       inform(filter);
       break;
+
     case "filterByKeyAndValue":
       let keyValueFilter = filterByKeyAndValue(
         data,
@@ -92,6 +93,6 @@ function run() {
   if (writeToFile) {
     writeJSONFile("./data", "customerCart.json", updatedPurchase);
   }
-  inform("\n Thank you for shopping with us!");
+  inform("\n 🛍️  Thank you for shopping with us! 🛍️");
 }
 run();

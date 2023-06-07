@@ -23,7 +23,7 @@ function create(customerCart, item) {
 function index(customerCart) {
   return customerCart.map(
     (eachPurchase) =>
-      `id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type} | condition: ${eachPurchase.conditon} | year: ${eachPurchase.year} | size: ${eachPurchase.size} `
+      `🛒 id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type} | condition: ${eachPurchase.conditon} | year: ${eachPurchase.year} | size: ${eachPurchase.size} 🛒`
   );
 }
 
@@ -71,10 +71,10 @@ function update(customerCart, purchaseId, updatedPurchase) {
     customerCart[index].year = updatedItem.year;
     customerCart[index].size = updatedItem.size;
 
-    inform("Order successfully updated");
+    inform("✅ Order successfully updated");
     return customerCart;
   } else {
-    inform("Order not found. Please try again");
+    inform("🛑 Order not found. Please try again.");
     return customerCart;
   }
 }
@@ -85,10 +85,10 @@ function remove(customerCart, purchaseId) {
   );
   if (index > -1) {
     customerCart.splice(index, 1);
-    inform("Purchase successfully removed from your cart!");
+    inform("✅ Purchase successfully removed from your cart!");
     return customerCart;
   } else {
-    inform("Purchase not found. No action taken. Please try again.");
+    inform("🛑 Purchase not found. No action taken. Please try again.");
     return customerCart;
   }
 }
@@ -98,9 +98,9 @@ function total(customerCart) {
     (amounts) => amounts.priceInCents
   );
   let totalAmount = filteredPriceInCents.reduce((prev, curr) => prev + curr);
-  return `Number of items: ${chalk.cyan(
+  return `🛒 Total: ${chalk.yellow(
     filteredPriceInCents.length
-  )} | Amount total: ${chalk.green(`$`)}${chalk.green(totalAmount)}`;
+  )} |💰 Total: ${chalk.green(`$`)}${chalk.green(totalAmount)}`;
 }
 
 function emptyCart(customerCart) {
