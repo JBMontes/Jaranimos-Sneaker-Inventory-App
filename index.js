@@ -11,7 +11,7 @@ const {
   inStock,
   sortByPrice,
   filterCondition,
-  filterByKeyAndValue
+  filterByKeyAndValue,
 } = require("./src/vintageController");
 
 const inform = console.log;
@@ -71,15 +71,19 @@ function run() {
     case "sortByPrice":
       let sortedInventory = sortByPrice(data, process.argv[3]);
       inform(sortedInventory);
-      break;  
-    
+      break;
+
     case "filterCondition":
       let filter = filterCondition(data, process.argv[3]);
-      inform(filter)
+      inform(filter);
       break;
     case "filterByKeyAndValue":
-      let keyValueFilter = filterByKeyAndValue(data, process.argv[3], process.argv[4])
-      inform(keyValueFilter)
+      let keyValueFilter = filterByKeyAndValue(
+        data,
+        process.argv[3],
+        process.argv[4]
+      );
+      inform(keyValueFilter);
       break;
 
     default:

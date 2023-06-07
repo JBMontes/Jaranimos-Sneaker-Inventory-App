@@ -29,10 +29,27 @@ function index(customerCart) {
 
 function view(customerCart, item) {
   let singlePurchaseInfo = customerCart.filter(
-    (product) => product.name === item);
-    
+    (product) => product.name === item
+  );
+
   for (let info of singlePurchaseInfo) {
-    return chalk.bgWhiteBright(`${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green("name")}: ${chalk.black(info.name)} | ${chalk.blue("priceInCents")}: ${chalk.green(`$`)}${chalk.green(info.priceInCents)}${chalk.green(".00")} | ${chalk.red("inStock")}: ${chalk.black(info.inStock)} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)} | ${chalk.magentaBright("condition")}: ${chalk.black(info.condition)} | ${chalk.magentaBright("year")}: ${chalk.black(info.year)} | ${chalk.magentaBright("size")}: ${chalk.black(info.size)}`);
+    return chalk.bgWhiteBright(
+      `${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green(
+        "name"
+      )}: ${chalk.black(info.name)} | ${chalk.blue(
+        "priceInCents"
+      )}: ${chalk.green(`$`)}${chalk.green(info.priceInCents)}${chalk.green(
+        ".00"
+      )} | ${chalk.red("inStock")}: ${chalk.black(
+        info.inStock
+      )} | ${chalk.magentaBright("type")}: ${chalk.black(
+        info.type
+      )} | ${chalk.magentaBright("condition")}: ${chalk.black(
+        info.condition
+      )} | ${chalk.magentaBright("year")}: ${chalk.black(
+        info.year
+      )} | ${chalk.magentaBright("size")}: ${chalk.black(info.size)}`
+    );
   }
 }
 
@@ -40,7 +57,6 @@ function update(customerCart, purchaseId, updatedPurchase) {
   const index = customerCart.findIndex(
     (purchase) => purchase.id === purchaseId
   );
-
   const updatedItem = data.find(
     (purchase) => purchase.name === updatedPurchase
   );
@@ -75,7 +91,7 @@ function remove(customerCart, purchaseId) {
     inform("Purchase not found. No action taken. Please try again.");
     return customerCart;
   }
-};
+}
 
 function total(customerCart) {
   let filteredPriceInCents = customerCart.map(
@@ -117,9 +133,9 @@ function filterCondition(inventory, option) {
   return inventory.filter((item) => item.condition === option);
 }
 
-function filterByKeyAndValue(data, category, option){
-  let filter = data.filter((item)=> item[category] === option)
-  return filter
+function filterByKeyAndValue(data, category, option) {
+  let filter = data.filter((item) => item[category] === option);
+  return filter;
 }
 
 module.exports = {
@@ -133,5 +149,5 @@ module.exports = {
   inStock,
   sortByPrice,
   filterCondition,
-  filterByKeyAndValue
+  filterByKeyAndValue,
 };

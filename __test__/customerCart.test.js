@@ -24,6 +24,7 @@ describe("Generating view of items in stock", () => {
     ]);
   });
 });
+
 describe("Generating filtered view of items by condition of item ", () => {
   test("Checks for appropriate filter output", () => {
     expect(filterCondition(data,"bad")).toStrictEqual([
