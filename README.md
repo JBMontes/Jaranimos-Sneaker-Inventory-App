@@ -50,3 +50,7 @@ sortByPrice() : This function logs a sorted array of all the items by price with
 filterCondition() : This function logs a fitlered array based on the condition of choice (bad, fair, good, excellent). To run this function, use the followiong command:
 
                 npm run filterCondition (option)
+
+filterByKeyAndValue() : This function is a play on the previous function. It allows the user to filter through the inventory more efficiently by inputting the key(category) and value(option) into the command line. To run this function, use the following command:
+
+                npm run filterByKeyAndValue (key) (value)

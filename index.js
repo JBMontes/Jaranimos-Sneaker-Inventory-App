@@ -10,14 +10,15 @@ const {
   emptyCart,
   inStock,
   sortByPrice,
-  filterCondition
+  filterCondition,
+  filterByKeyAndValue
 } = require("./src/vintageController");
 
 const inform = console.log;
 const data = require("./data/sampleData.json");
 
 function run() {
-  inform("Welcome to Jaranimo's Online Vintage App \n\n");
+  inform("👕 🧢 Welcome to Jaranimo's Online Vintage App 🧢 👕\n\n");
   let purchases = readJSONFile("data", "customerCart.json");
 
   let writeToFile = false;
@@ -75,6 +76,10 @@ function run() {
     case "filterCondition":
       let filter = filterCondition(data, process.argv[3]);
       inform(filter)
+      break;
+    case "filterByKeyAndValue":
+      let keyValueFilter = filterByKeyAndValue(data, process.argv[3], process.argv[4])
+      inform(keyValueFilter)
       break;
 
     default:

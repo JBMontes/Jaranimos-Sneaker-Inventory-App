@@ -117,6 +117,11 @@ function filterCondition(inventory, option) {
   return inventory.filter((item) => item.condition === option);
 }
 
+function filterByKeyAndValue(data, category, option){
+  let filter = data.filter((item)=> item[category] === option)
+  return filter
+}
+
 module.exports = {
   create,
   index,
@@ -128,4 +133,5 @@ module.exports = {
   inStock,
   sortByPrice,
   filterCondition,
+  filterByKeyAndValue
 };

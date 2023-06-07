@@ -15,7 +15,8 @@
     "emptyCart": "node index.js emptyCart",
     "inStock": "node index.js inStock",
     "sortByPrice": "node index.js sortByPrice",
-    "filterCondition": "node index.js filterCondition"
+    "filterCondition": "node index.js filterCondition",
+    "filterByKeyAndValue": "node index.js filterByKeyAndValue"
   },
   "keywords": [],
   "author": "",
