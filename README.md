@@ -1,6 +1,6 @@
 # Jaranimos-Vintage-Inventory-App
 
- ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://www.majesticsignstudio.com/wp-content/uploads/2016/03/Vintage-Sign-Design.jpg)
+ ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://publish.one37pm.net/wp-content/uploads/2019/08/vintage-tees-shopping-tips-tricks-mobile.jpg?resize=720%2C780)
  
  ## Command Line Inventory App 
 Welcome,
