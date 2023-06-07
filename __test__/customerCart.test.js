@@ -2,7 +2,7 @@ const { index, inStock } = require("../src/vintageController");
 
 const data = require("../data/sampleData.json");
 
-const customerOrder = require("../data/customerCart.json");
+const customerOrder = require("./sampleTestData.json");
 
 describe("Generating view of objects from Customer Cart", () => {
   test("Checks for valid array output", () => {
