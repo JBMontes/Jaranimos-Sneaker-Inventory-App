@@ -27,12 +27,12 @@ index() : This function allows users to view specific items inside of their cart
 
 view() : This function allows users to view a specific items within the cart using enhanced terminal string styling. To run function, use following command: 
 
- ``` npm run view (item Name) ```     
+ ``` npm run view (item name) ```     
  </br>
 
 update() : This function updates/changes an item using the ID of the cart item. To run this function, use following command:
 
-   ``` npm run update (id) (itemName) ```    
+   ``` npm run update (id) (item name) ```    
 </br>
 
 remove() : This function removes a specific item in the customers cart using the ID of cart item. To run this function, use following command:
