@@ -11,10 +11,10 @@ function create(customerCart, item) {
     name: item,
     type: index.type,
     size: index.size,
-    priceInCents: index.priceInCents, 
+    priceInCents: index.priceInCents,
     conditon: index.condition,
     year: index.year,
-    inStock: index.inStock
+    inStock: index.inStock,
   };
   customerCart.push(newPurchase);
   return customerCart;
@@ -29,20 +29,10 @@ function index(customerCart) {
 
 function view(customerCart, item) {
   let singlePurchaseInfo = customerCart.filter(
-    (product) => product.name === item
-  );
+    (product) => product.name === item);
+    
   for (let info of singlePurchaseInfo) {
-    return chalk.bgWhiteBright(
-      `${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green(
-        "name"
-      )}: ${chalk.black(info.name)} | ${chalk.blue(
-        "priceInCents"
-      )}: ${chalk.green(`$`)}${chalk.green(info.priceInCents)}${chalk.green(
-        `.00`
-      )} | ${chalk.red("inStock")}: ${chalk.black(
-        info.inStock
-      )} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)} | ${chalk.magentaBright("condition")}: ${chalk.black(info.condition)} | ${chalk.magentaBright("year")}: ${chalk.black(info.year)} | ${chalk.magentaBright("size")}: ${chalk.black(info.size)}`
-    );
+    return chalk.bgWhiteBright(`${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green("name")}: ${chalk.black(info.name)} | ${chalk.blue("priceInCents")}: ${chalk.green(`$`)}${chalk.green(info.priceInCents)}${chalk.green(".00")} | ${chalk.red("inStock")}: ${chalk.black(info.inStock)} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)} | ${chalk.magentaBright("condition")}: ${chalk.black(info.condition)} | ${chalk.magentaBright("year")}: ${chalk.black(info.year)} | ${chalk.magentaBright("size")}: ${chalk.black(info.size)}`);
   }
 }
 
@@ -64,7 +54,7 @@ function update(customerCart, purchaseId, updatedPurchase) {
     customerCart[index].condition = updatedItem.condition;
     customerCart[index].year = updatedItem.year;
     customerCart[index].size = updatedItem.size;
-    
+
     inform("Order successfully updated");
     return customerCart;
   } else {
@@ -77,7 +67,7 @@ function remove(customerCart, purchaseId) {
   const index = customerCart.findIndex(
     (purchase) => purchase.id === purchaseId
   );
-  if (index) {
+  if (index > -1) {
     customerCart.splice(index, 1);
     inform("Purchase successfully removed from your cart!");
     return customerCart;
@@ -112,21 +102,19 @@ function inStock(data) {
   );
 }
 
-function sortByPrice(inventory, option){
-  let lowToHigh = inventory.sort((a,b)=> a.priceInCents - b.priceInCents)
+function sortByPrice(inventory, option) {
+  let lowToHigh = inventory.sort((a, b) => a.priceInCents - b.priceInCents);
 
-  if(option === "lowToHigh"){
-      return lowToHigh
+  if (option === "Low_To_High") {
+    return lowToHigh;
   }
-  if(option === "highToLow"){
-      return lowToHigh.reverse()
+  if (option === "High_To_Low") {
+    return lowToHigh.reverse();
   }
-};
+}
 
-function filterCondition(inventory, option){
-  
-  return inventory.filter((item)=> item.condition === option)
-
+function filterCondition(inventory, option) {
+  return inventory.filter((item) => item.condition === option);
 }
 
 module.exports = {
@@ -139,5 +127,5 @@ module.exports = {
   emptyCart,
   inStock,
   sortByPrice,
-  filterCondition
+  filterCondition,
 };

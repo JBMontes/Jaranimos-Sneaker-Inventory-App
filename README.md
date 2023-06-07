@@ -43,10 +43,10 @@ inStock() : This function shows all items that are currently in stock within the
 
                      npm run inStock
 
-sortByPrice() : This function logs a sorted array of all the items by price within store inventory. The user can choose from two options:(highToLow) or  (lowToHigh). To run this function, use following command: 
+sortByPrice() : This function logs a sorted array of all the items by price within store inventory. The user can choose from two options:(High_To_Low) or  (Low_To_High). To run this function, use following command: 
 
                   npm run sortByPrice (option)
 
 filterCondition() : This function logs a fitlered array based on the condition of choice (bad, fair, good, excellent). To run this function, use the followiong command:
 
-                    npm run filterCondition (option)
+                npm run filterCondition (option)

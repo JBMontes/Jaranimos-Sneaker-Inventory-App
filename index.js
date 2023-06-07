@@ -17,7 +17,7 @@ const inform = console.log;
 const data = require("./data/sampleData.json");
 
 function run() {
-  inform("Welcome to Jaranimo's Online Vintage App");
+  inform("Welcome to Jaranimo's Online Vintage App \n\n");
   let purchases = readJSONFile("data", "customerCart.json");
 
   let writeToFile = false;
@@ -83,6 +83,6 @@ function run() {
   if (writeToFile) {
     writeJSONFile("./data", "customerCart.json", updatedPurchase);
   }
-  inform("Thank You for shopping with us!");
+  inform("\n Thank you for shopping with us!");
 }
 run();
