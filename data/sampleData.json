@@ -1,10 +1,10 @@
 [
-    {"name": "sacai" , "priceInCents": 250 , "inStock": true, "type": "LowTop"},
-    {"name": "blazers", "priceInCents": 90, "inStock": false , "type": "HighTop"},
-    {"name": "dunks", "priceInCents":110 , "inStock": true, "type": "LowTop"},
-    {"name": "waffleRunner", "priceInCents":70 , "inStock": false, "type":"LowTop"},
-    {"name": "airMax97", "priceInCents":180 , "inStock": false, "type":"LowTop"},
-    {"name": "spaceJunkies", "priceInCents":140 , "inStock": false, "type":"LowTop"},
-    {"name": "jordanOne", "priceInCents":110 , "inStock": true, "type":"HighTop"}
+    {"name": "Star_Wars_Episode_One" , "priceInCents": 250 , "inStock": true, "type": "shirt", "condition": "excellent", "year": 1992, "size": "XL"},
+    {"name": "Fubu_Bucket", "priceInCents": 90, "inStock": false , "type": "hat", "condition": "good", "year": 1997, "size": "L"},
+    {"name": "Arizona_Coyotee", "priceInCents":400 , "inStock": true, "type": "jersey", "condition": "excellent", "year": 1990, "size": "XXL"},
+    {"name": "Stone_Cold", "priceInCents":280 , "inStock": true, "type":"shirt", "condition": "fair", "year": 1990, "size": "XL"},
+    {"name": "The_Hundreds_Garfield", "priceInCents":180 , "inStock": false, "type":"shirt", "condition": "bad", "year": 1992, "size": "S"},
+    {"name": "Looney_Tunes_Harley_Davidson", "priceInCents":140 , "inStock": false, "type":"shirt", "condition": "fair", "year": 1993, "size": "M"},
+    {"name": "The_Hundreds_Batman", "priceInCents":200 , "inStock": true, "type":"shirt", "condition": "bad", "year": 2005, "size": "L"}
 
 ]

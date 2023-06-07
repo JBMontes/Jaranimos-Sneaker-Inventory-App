@@ -9,6 +9,8 @@ const {
   total,
   emptyCart,
   inStock,
+  sortByPrice,
+  filterCondition
 } = require("./src/vintageController");
 
 const inform = console.log;
@@ -63,6 +65,16 @@ function run() {
     case "inStock":
       let availability = inStock(data);
       inform(availability);
+      break;
+
+    case "sortByPrice":
+      let sortedInventory = sortByPrice(data, process.argv[3]);
+      inform(sortedInventory);
+      break;  
+    
+    case "filterCondition":
+      let filter = filterCondition(data, process.argv[3]);
+      inform(filter)
       break;
 
     default:

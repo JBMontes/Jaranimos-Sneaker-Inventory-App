@@ -9,9 +9,12 @@ function create(customerCart, item) {
   const newPurchase = {
     id: `${nanoid(4)}`,
     name: item,
-    priceInCents: index.priceInCents,
-    inStock: index.inStock,
     type: index.type,
+    size: index.size,
+    priceInCents: index.priceInCents, 
+    conditon: index.condition,
+    year: index.year,
+    inStock: index.inStock
   };
   customerCart.push(newPurchase);
   return customerCart;
@@ -20,7 +23,7 @@ function create(customerCart, item) {
 function index(customerCart) {
   return customerCart.map(
     (eachPurchase) =>
-      `id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type}`
+      `id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type} | condition: ${eachPurchase.conditon} | year: ${eachPurchase.year} | size: ${eachPurchase.size} `
   );
 }
 
@@ -38,7 +41,7 @@ function view(customerCart, item) {
         `.00`
       )} | ${chalk.red("inStock")}: ${chalk.black(
         info.inStock
-      )} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)}`
+      )} | ${chalk.magentaBright("type")}: ${chalk.black(info.type)} | ${chalk.magentaBright("condition")}: ${chalk.black(info.condition)} | ${chalk.magentaBright("year")}: ${chalk.black(info.year)} | ${chalk.magentaBright("size")}: ${chalk.black(info.size)}`
     );
   }
 }
@@ -58,11 +61,14 @@ function update(customerCart, purchaseId, updatedPurchase) {
     customerCart[index].priceInCents = updatedItem.priceInCents;
     customerCart[index].inStock = updatedItem.inStock;
     customerCart[index].type = updatedItem.type;
-
-    inform("Purchase successfully updated");
+    customerCart[index].condition = updatedItem.condition;
+    customerCart[index].year = updatedItem.year;
+    customerCart[index].size = updatedItem.size;
+    
+    inform("Order successfully updated");
     return customerCart;
   } else {
-    inform("Purchase not found. Please try again");
+    inform("Order not found. Please try again");
     return customerCart;
   }
 }
@@ -99,11 +105,28 @@ function emptyCart(customerCart) {
 }
 
 function inStock(data) {
-  let filtered = data.filter((sneakers) => sneakers.inStock === true);
+  let filtered = data.filter((stock) => stock.inStock === true);
   return filtered.map(
     (item) =>
-      `name: ${item.name} | type: ${item.type} | price: ${item.priceInCents}`
+      `name: ${item.name} | type: ${item.type} | price: ${item.priceInCents} | size: ${item.size} | condition: ${item.condition} | year: ${item.year}`
   );
+}
+
+function sortByPrice(inventory, option){
+  let lowToHigh = inventory.sort((a,b)=> a.priceInCents - b.priceInCents)
+
+  if(option === "lowToHigh"){
+      return lowToHigh
+  }
+  if(option === "highToLow"){
+      return lowToHigh.reverse()
+  }
+};
+
+function filterCondition(inventory, option){
+  
+  return inventory.filter((item)=> item.condition === option)
+
 }
 
 module.exports = {
@@ -115,4 +138,6 @@ module.exports = {
   total,
   emptyCart,
   inStock,
+  sortByPrice,
+  filterCondition
 };
