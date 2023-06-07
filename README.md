@@ -15,7 +15,7 @@ Before running any functions, be sure to create the appropriate scripts in the p
 
 create() : This function allows users to put specific items into their cart. To run function, use following command:
 
- ``` npm run create (item Name) ```
+ ``` npm run create (item name) ```
  </br>
  </br>
 
