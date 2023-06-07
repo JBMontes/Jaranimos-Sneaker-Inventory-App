@@ -75,7 +75,7 @@ function remove(customerCart, purchaseId) {
     inform("Purchase not found. No action taken. Please try again.");
     return customerCart;
   }
-}
+};
 
 function total(customerCart) {
   let filteredPriceInCents = customerCart.map(
