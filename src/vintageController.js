@@ -17,6 +17,7 @@ function create(customerCart, item) {
     inStock: index.inStock,
   };
   customerCart.push(newPurchase);
+  inform(`New Item Has Been Added to 🛒`)
   return customerCart;
 }
 
@@ -33,6 +34,7 @@ function view(customerCart, item) {
   );
 
   for (let info of singlePurchaseInfo) {
+    inform("Cart Item 🛒: \n")
     return chalk.bgWhiteBright(
       `${chalk.magenta("id")}: ${chalk.black(info.id)} | ${chalk.green(
         "name"
@@ -85,10 +87,10 @@ function remove(customerCart, purchaseId) {
   );
   if (index > -1) {
     customerCart.splice(index, 1);
-    inform("✅ Purchase successfully removed from your cart!");
+    inform("✅ Purchase item successfully 🗑️ from your cart!");
     return customerCart;
   } else {
-    inform("🛑 Purchase not found. No action taken. Please try again.");
+    inform("🛑 Purchase item not found. No action taken. Please try again.");
     return customerCart;
   }
 }
@@ -107,11 +109,13 @@ function emptyCart(customerCart) {
   if (customerCart.length > 0) {
     customerCart.splice(0, customerCart.length);
   }
+  inform("All items successfully 🗑️ from 🛒")
   return customerCart;
 }
 
 function inStock(data) {
   let filtered = data.filter((stock) => stock.inStock === true);
+  inform("All Items for Sale:\n")
   return filtered.map(
     (item) =>
       `name: ${item.name} | type: ${item.type} | price: ${item.priceInCents} | size: ${item.size} | condition: ${item.condition} | year: ${item.year}`

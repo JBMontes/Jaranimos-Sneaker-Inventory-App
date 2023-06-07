@@ -19,7 +19,7 @@ const inform = console.log;
 const data = require("./data/sampleData.json");
 
 function run() {
-  inform("👕 🧢 Welcome to Jaranimo's Online Vintage App 🧢 👕\n\n");
+  inform("👕 🧢 Welcome to Jaranimo's Online Vintage App 🧢 👕\n");
   let purchases = readJSONFile("data", "customerCart.json");
 
   let writeToFile = false;
