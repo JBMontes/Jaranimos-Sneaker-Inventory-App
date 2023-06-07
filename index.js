@@ -14,6 +14,7 @@ const {
   filterByKeyAndValue,
 } = require("./src/vintageController");
 
+const chalk = require("chalk")
 const inform = console.log;
 const data = require("./data/sampleData.json");
 

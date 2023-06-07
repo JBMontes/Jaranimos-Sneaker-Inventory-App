@@ -122,9 +122,11 @@ function sortByPrice(inventory, option) {
   let lowToHigh = inventory.sort((a, b) => a.priceInCents - b.priceInCents);
 
   if (option === "Low_To_High") {
+    inform(`${chalk.green("Priced")} from ${chalk.blue("Low")} → ${chalk.red("High")}:`)
     return lowToHigh;
   }
   if (option === "High_To_Low") {
+    inform(`${chalk.green("Priced")} from ${chalk.red("High")} → ${chalk.blue("Low")}:`)
     return lowToHigh.reverse();
   }
 }
@@ -134,8 +136,8 @@ function filterCondition(inventory, option) {
 }
 
 function filterByKeyAndValue(data, category, option) {
-  let filter = data.filter((item) => item[category] === option);
-  return filter;
+  return data.filter((item) => item[category] === option);
+
 }
 
 module.exports = {
