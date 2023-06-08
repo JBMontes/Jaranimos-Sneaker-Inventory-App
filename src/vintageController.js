@@ -22,9 +22,10 @@ function create(customerCart, item) {
 }
 
 function index(customerCart) {
+  inform("All 🛒 items:\n")
   return customerCart.map(
     (eachPurchase) =>
-      `🛒 id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type} | condition: ${eachPurchase.conditon} | year: ${eachPurchase.year} | size: ${eachPurchase.size} 🛒`
+      `🛒 id: ${eachPurchase.id} | name: ${eachPurchase.name} | cost: ${eachPurchase.priceInCents} | inStock: ${eachPurchase.inStock} | type: ${eachPurchase.type} | condition: ${eachPurchase.conditon} | year: ${eachPurchase.year} | size: ${eachPurchase.size}`
   );
 }
 
@@ -87,7 +88,7 @@ function remove(customerCart, purchaseId) {
   );
   if (index > -1) {
     customerCart.splice(index, 1);
-    inform("✅ Purchase item successfully 🗑️ from your cart!");
+    inform("✅ Purchase item successfully 🗑️  from your cart!");
     return customerCart;
   } else {
     inform("🛑 Purchase item not found. No action taken. Please try again.");
@@ -136,7 +137,7 @@ function sortByPrice(inventory, option) {
 }
 
 function filterCondition(inventory, option) {
-  inform(`List of All ${option} items:`)
+  inform(`List of ${option.toUpperCase()} items:`)
   return inventory.filter((item) => item.condition === option);
 }
 
