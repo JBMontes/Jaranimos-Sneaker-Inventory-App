@@ -114,8 +114,8 @@ function emptyCart(customerCart) {
   return customerCart;
 }
 
-function inStock(data) {
-  let filtered = data.filter((stock) => stock.inStock === true);
+function inStock(inventory) {
+  let filtered = inventory.filter((stock) => stock.inStock === true);
   inform("All Items Currently for Sale:\n")
   return filtered.map(
     (item) =>
@@ -141,9 +141,9 @@ function filterCondition(inventory, option) {
   return inventory.filter((item) => item.condition === option);
 }
 
-function filterByKeyAndValue(data, category, option) {
+function filterByKeyAndValue(inventory, category, option) {
   inform(`Sort ${chalk.cyan(category)} by ${chalk.red(option)}`)
-  return data.filter((item) => item[category] === option);
+  return inventory.filter((item) => item[category] === option);
 
 }
 
