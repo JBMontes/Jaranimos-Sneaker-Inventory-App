@@ -142,7 +142,7 @@ function filterCondition(inventory, option) {
 }
 
 function filterByKeyAndValue(inventory, category, option) {
-  inform(`Sort ${chalk.cyan(category)} by ${chalk.red(option)}`)
+  inform(`Sort ${chalk.cyan(category)} by ${chalk.red(option)}:`)
   return inventory.filter((item) => item[category] === option);
 
 }
