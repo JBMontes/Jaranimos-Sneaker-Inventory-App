@@ -4,7 +4,7 @@ const data = require("../data/sampleData.json");
 
 const customerOrder = require("./sampleTestData.json");
 
-describe("Generating view of objects from Customer Cart", () => {
+describe("Generating view of objects from inventory", () => {
   test("Checks for valid array output", () => {
     expect(index(customerOrder)).toStrictEqual([
       'id: 6zvL | name: The_Hundreds_Batman | cost: 200 | inStock: true | type: shirt | condition: bad | year: 2005 | size: L ',

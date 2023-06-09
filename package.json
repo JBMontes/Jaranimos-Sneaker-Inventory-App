@@ -1,7 +1,7 @@
 {
   "name": "jaranimos-vintage-inventory-app",
   "version": "1.0.0",
-  "description": "Vintage Command Line Inventory App used to manipulate orders online.",
+  "description": "Command Line Inventory App used to manipulate store inventory.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -19,7 +19,7 @@
     "filterByKeyAndValue": "node index.js filterByKeyAndValue"
   },
   "keywords": [],
-  "author": "jeremy montes",
+  "author": "Jeremy Montes",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.5.0"
