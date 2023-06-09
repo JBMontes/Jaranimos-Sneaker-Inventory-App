@@ -13,13 +13,13 @@ Before running any functions, be sure to create the appropriate scripts in the p
 
 ## The Controller Functions                    
 
-create() : This function allows users to put specific items into their cart. To run function, use following command:
+create() : This function allows users to add specific items into the store's inventory. To run function, use following command:
 
  ``` npm run create (item name) ```
  </br>
  </br>
 
-index() : This function allows users to view specific items inside of their cart. To run function, use following command:
+index() : This function allows users to view specific items in store's inventory. To run function, use following command:
 
   ``` npm run index```  
   </br>
@@ -35,12 +35,12 @@ update() : This function updates/changes an item using the ID of the cart item. 
    ``` npm run update (id) (item name) ```    
 </br>
 
-remove() : This function removes a specific item in the customers cart using the ID of cart item. To run this function, use following command:
+remove() : This function removes a specific item in the employee cart using the ID of cart item. To run this function, use following command:
 
   ``` npm run remove (id) ```           
  </br> 
 
-total() : This function generates the total purchase amount and number of items within the customers cart. To run this function, use following command:
+total() : This function generates the total purchase amount and number of items within the employee's cart. To run this function, use following command:
 
    ``` npm run total ```                  
   </br> 

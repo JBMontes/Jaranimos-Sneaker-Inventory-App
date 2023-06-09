@@ -14,53 +14,53 @@ const {
   filterByKeyAndValue,
 } = require("./src/vintageController");
 
-const chalk = require("chalk")
+const chalk = require("chalk");
 const inform = console.log;
 const data = require("./data/sampleData.json");
 
 function run() {
-  inform("👕 🧢 Welcome to Jaranimo's Online Vintage App 🧢 👕\n");
-  let purchases = readJSONFile("data", "customerCart.json");
+  inform("👕 🧢 Welcome to Jaranimo's Vintage Inventory App 🧢 👕\n");
+  let products = readJSONFile("data", "storeInventory.json");
 
   let writeToFile = false;
-  let updatedPurchase = [];
+  let updatedItem = [];
 
   const action = process.argv[2];
-  const purchase = process.argv[3];
+  const inventory = process.argv[3];
 
   switch (action) {
     case "index":
-      const purchaseView = index(purchases);
+      const purchaseView = index(products);
       inform(purchaseView);
       break;
 
     case "view":
-      const detailedView = view(purchases, purchase);
+      const detailedView = view(products, inventory);
       inform(detailedView);
       break;
 
     case "create":
-      updatedPurchase = create(purchases, purchase);
+      updatedItem = create(products, inventory);
       writeToFile = true;
       break;
 
     case "update":
-      updatedPurchase = update(purchases, purchase, process.argv[4]);
+      updatedItem = update(products, inventory, process.argv[4]);
       writeToFile = true;
       break;
 
     case "remove":
-      updatedPurchase = remove(purchases, purchase);
+      updatedItem = remove(products, inventory);
       writeToFile = true;
       break;
 
     case "total":
-      let totalDonation = total(purchases);
+      let totalDonation = total(products);
       inform(totalDonation);
       break;
 
     case "emptyCart":
-      updatedPurchase = emptyCart(purchases);
+      updatedItem = emptyCart(products);
       writeToFile = true;
       break;
 
@@ -92,8 +92,7 @@ function run() {
       inform("Error with Information Provided!");
   }
   if (writeToFile) {
-    writeJSONFile("./data", "customerCart.json", updatedPurchase);
+    writeJSONFile("./data", "storeInventory.json", updatedItem);
   }
-  inform("\n 🛍️  Thank you for shopping with us! 🛍️");
 }
 run();
